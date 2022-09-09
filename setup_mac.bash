@@ -18,8 +18,8 @@ docker run -d ${docker_run_opts}  \
   -e $timezone \
   -v $config_path:/config \
   -p 8123:8123 \
-  -p 2222:2222 \
-  -p 3333:3333 \
+  -p 2222:2222/udp \
+  -p 3333:3333/tcp \
   ghcr.io/home-assistant/home-assistant:stable
 
 docker exec -it "$docker_name" bash /config/klyqa-install.bash
